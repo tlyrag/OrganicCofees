@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
-const port =  5847;
+const port =  process.env.PORT || 5847;
 app.use(cors())
 app.use(bodyParser.urlencoded({ limit:'50mb', extended: false, parameterLimit: 50000}));
 app.use(bodyParser.json({limit: '50mb'}));
